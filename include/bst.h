@@ -19,24 +19,24 @@ bool is_char(char data) {
 
 template <typename T>
 class BST {
- public:
-    BST() : root(nullptr) {};
+     public:
+    BST() : root(nullptr) {}
     ~BST();
     void add(T);
     void print();
     int depth();
     int search(T);
-    bool is_empty() { return root == nullptr; };
+    bool is_empty() { return root == nullptr; }
     void buildTreeFromFile(const char *filename);
     class Node {
-    public:
+     public:
         T data;
         class Node* left;
         class Node* right;
         int count;
-    private:
+     private:
     };
-  private:
+     private:
     Node* root;
 
     Node* addNode(Node* root, T value);
@@ -75,8 +75,9 @@ void BST<T>::printTree(Node* root) {
 
 template<typename T>
 void BST<T>::delTree(Node* root) {
-    if (root == nullptr)
-        return; else {
+    if (root == nullptr) {
+        return; 
+    } else {
         delTree(root->left);
         delTree(root->right);
         delete root;
