@@ -20,7 +20,7 @@ bool is_char(char data) {
 
 template <typename T>
 class BST {
-      public:
+ public:
     BST() : root(nullptr) {}
     ~BST();
     void add(T);
@@ -36,9 +36,9 @@ class BST {
         class Node* right;
         int count;
     };
-      private:
+    
+ private:
     Node* root;
-
     Node* addNode(Node* root, T value);
     void printTree(Node* root);
     void delTree(Node* root);
@@ -102,7 +102,7 @@ int BST<T>::searchNode(Node* root, T value) {
     if (root == nullptr) return 0;
     else if (root->data == value) return root->count;
     else if (root->data > value) return searchNode(root->left, value);
-    else 
+    else
         return searchNode(root->right, value);
 }
 
