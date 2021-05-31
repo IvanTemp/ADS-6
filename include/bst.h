@@ -4,6 +4,7 @@
 
 #include  <iostream>
 #include  <fstream>
+#include  <string>
 
 bool is_char(char data) {
     std::string alf = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
@@ -19,7 +20,7 @@ bool is_char(char data) {
 
 template <typename T>
 class BST {
-     public:
+      public:
     BST() : root(nullptr) {}
     ~BST();
     void add(T);
@@ -34,9 +35,8 @@ class BST {
         class Node* left;
         class Node* right;
         int count;
-     private:
     };
-     private:
+      private:
     Node* root;
 
     Node* addNode(Node* root, T value);
@@ -76,7 +76,7 @@ void BST<T>::printTree(Node* root) {
 template<typename T>
 void BST<T>::delTree(Node* root) {
     if (root == nullptr) {
-        return; 
+        return;
     } else {
         delTree(root->left);
         delTree(root->right);
@@ -102,7 +102,8 @@ int BST<T>::searchNode(Node* root, T value) {
     if (root == nullptr) return 0;
     else if (root->data == value) return root->count;
     else if (root->data > value) return searchNode(root->left, value);
-    else return searchNode(root->right, value);
+    else 
+        return searchNode(root->right, value);
 }
 
 template<typename T>
