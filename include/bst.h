@@ -36,7 +36,7 @@ class BST {
         class Node* right;
         int count;
     };
-    
+
  private:
     Node* root;
     Node* addNode(Node* root, T value);
